@@ -442,7 +442,6 @@ public:
 		{
 			node.stats.inc (nano::stat::type::drop, nano::stat::detail::publish, nano::stat::dir::in);
 		}
-		node.active.publish (message_a.block);
 	}
 	void confirm_req (nano::confirm_req const & message_a) override
 	{
@@ -575,7 +574,6 @@ public:
 				{
 					node.stats.inc (nano::stat::type::drop, nano::stat::detail::confirm_ack, nano::stat::dir::in);
 				}
-				node.active.publish (block);
 			}
 		}
 		node.vote_processor.vote (message_a.vote, channel);
