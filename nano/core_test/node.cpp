@@ -2575,7 +2575,7 @@ TEST (node, vote_by_hash_republish)
 		{
 			ASSERT_NO_ERROR (system.poll ());
 		}
-		system.nodes[0]->active.publish (send2);
+		system.nodes[0]->process_active (send2);
 		std::vector<nano::block_hash> vote_blocks;
 		vote_blocks.push_back (send2->hash ());
 		auto vote (std::make_shared<nano::vote> (nano::test_genesis_key.pub, nano::test_genesis_key.prv, 0, vote_blocks));
